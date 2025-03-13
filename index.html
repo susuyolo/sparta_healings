@@ -72,7 +72,7 @@
         }
 
         .card-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
         }
 
@@ -158,28 +158,9 @@
                 'comment': comment,
             };
             await addDoc(collection(db, "healings"), doc);
-            alert('저장완료!');
+            alert('작성완료료!');
             window.location.reload();
         })
-
-
-
-        let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-        fetch(url).then(res => res.json()).then(data => {
-            let temp = data['temp'];
-            if (temp > 20) {
-                $('#msg').text('더워요');
-            } else {
-                $('#msg').text('추워요');
-            }
-        })
-
-
-        $("#savebtn").click(async function () {
-            $('#postingbox').toggle();
-        })
-
-
 
         let docs = await getDocs(collection(db, "healings"));
         docs.forEach((doc) => {
@@ -275,7 +256,7 @@
                     <label for="floatingInput">추천코스</label>
                 </div>
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupSelect01">star</label>
+                    <label class="input-group-text" for="inputGroupSelect01">별점</label>
                     <select class="form-select" id="star">
                         <option selected>별점선택</option>
                         <option value="⭐">⭐</option>
